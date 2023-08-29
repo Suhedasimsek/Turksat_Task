@@ -5,4 +5,4 @@ Feature: Login Test
   @wip
   Scenario: Kullanıcı geçerli datalarla login olur
     When Kullanıcı geçerli verilerle login olmalıdır.
-    Then Kullanıcı login olduğunu verify eder.
+    Then Kullanıcı login olduğunda "Menü" tabini gördüğünü verify eder.

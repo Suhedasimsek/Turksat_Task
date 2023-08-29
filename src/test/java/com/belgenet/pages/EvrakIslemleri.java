@@ -2,11 +2,12 @@ package com.belgenet.pages;
 
 import com.belgenet.utilities.Driver;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.Set;
 
 public class EvrakIslemleri extends BasePage {
 
@@ -14,47 +15,44 @@ public class EvrakIslemleri extends BasePage {
     public WebElement evrakIslemleri_loc;
     @FindBy(xpath = "//span[@class='topMenuIcons evrakOlustur']")
     public WebElement evrakOlustur_loc;
-
-    @FindBy(id = "yeniGidenEvrakForm:evrakBilgileriList:1:konuKoduLov:LovText")
-    public WebElement konuKodu_loc;
-    @FindBy(xpath = "//input[@id='yeniGidenEvrakForm:evrakBilgileriList:1:konuKoduLov:LovText']")
-    public WebElement konuKoduInput_loc;
     @FindBy(id = "yeniGidenEvrakForm:evrakBilgileriList:1:konuKoduLov:j_idt6027")
     public WebElement konuKoduCarpi_loc;
-    @FindBy(xpath = "(//span[@class='ui-treenode-label ui-corner-all'])[2]")
-    public WebElement faturaGönderimi_loc;
     @FindBy(id = "yeniGidenEvrakForm:evrakBilgileriList:1:konuKoduLov:treeButton")
-    public WebElement konuKoduMenu_loc;
-    @FindBy(xpath = "(//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e'])[5]")
-    public WebElement bilisimHizmetleri_loc;
-    @FindBy(xpath = "//span[text()='Kablo Hizmetleri Müşteri İlişkileri | Abone İşlemleri | Şikayetler ']")
-    public WebElement faturaSikayetleri_loc;
-    @FindBy(xpath = "(//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e'])[6]")
-    public WebElement yazilimGelistirmeHizmetleri_loc;
-    @FindBy(xpath = "(//span[text()='Yazılım Geliştirme İşlemleri '])[2]")
-    public WebElement aboneMusteriHizmetleri_loc;
-    @FindBy(xpath = "//textarea[@name='yeniGidenEvrakForm:evrakBilgileriList:3:konuTextArea']")
+    public WebElement konuKoduSec_loc;
+    @FindBy(xpath = "(//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e'])[2]")
+    public WebElement konuKabloHizmetleri_loc;
+    @FindBy(xpath = "//li[@id='yeniGidenEvrakForm:evrakBilgileriList:1:konuKoduLov:lovTree:2_0']//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']")
+    public WebElement konuKabloMusteriHizmetleri_loc;
+    @FindBy(xpath = "//li[@id='yeniGidenEvrakForm:evrakBilgileriList:1:konuKoduLov:lovTree:2_0_0']//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']")
+    public WebElement konuAboneIslemleri_loc;
+    @FindBy(xpath = "//li[@id='yeniGidenEvrakForm:evrakBilgileriList:1:konuKoduLov:lovTree:2_0_0_0']//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']")
+    public WebElement konuSikayetler_loc;
+    @FindBy(xpath = "(//span[text()='Kablo Hizmetleri Müşteri İlişkileri | Abone İşlemleri | Şikayetler '])[1]")
+    public WebElement konuFaturaSikayetler_loc;
+    @FindBy(xpath = "//textarea[@id='yeniGidenEvrakForm:evrakBilgileriList:3:konuTextArea']")
     public WebElement konu_loc;
-    @FindBy(xpath = "//input[@name='yeniGidenEvrakForm:evrakBilgileriList:4:eklenecekKlasorlerLov:LovText']")
-    public WebElement kaldirilacakKlasorler_loc;
     @FindBy(xpath = "(//span[@class='ui-button-icon-left ui-icon ui-c tree-icon'])[2]")
     public WebElement kaldirilacakKlasorlerSec_loc;
-    @FindBy(xpath = "//div[@id='yeniGidenEvrakForm:evrakBilgileriList:17:bilgiLov:lovInputPanel']")
-    public WebElement bilgi_loc;
     @FindBy(xpath = "(//span[@class='ui-button-icon-left ui-icon ui-c tree-icon'])[3]")
     public WebElement bilgiSec_loc;
-    @FindBy(xpath = "(//span[text()='GENEL MÜDÜRLÜK MAKAMI'])[2]")
+    @FindBy(xpath = "(//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e'])[1]")
     public WebElement bilgiGenelMudurluk_loc;
-    @FindBy(xpath= "//li[@id='yeniGidenEvrakForm:evrakBilgileriList:17:bilgiLov:lovTree:0']//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']")
+    @FindBy(xpath = "//li[@id='yeniGidenEvrakForm:evrakBilgileriList:17:bilgiLov:lovTree:0']//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']")
     public WebElement bilgiBirim_loc;
-    @FindBy(xpath= "//span[text()='GENEL MÜDÜRLÜK MAKAMI  |  E-DEVLET VE BİLİŞİM HİZMETLERİ GENEL MÜDÜR YARDIMCISI  |  BİLİŞİM  İŞ GELİŞTİRME VE PROJE YÖNETİMİ DİREKTÖRLÜĞÜ  |  BEAM BİRİM  |  TEST DEPARTMENT']")
+    @FindBy(xpath = "(//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e'])[6]")
+    public WebElement bilgiEdevlet_loc;
+    @FindBy(xpath = "(//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e'])[6]")
+    public WebElement bilgiBilisim2_loc;
+    @FindBy(xpath = "(//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e'])[6]")
+    public WebElement bilgiBean_loc;
+    @FindBy(xpath = "(//span[text()='GENEL MÜDÜRLÜK MAKAMI  |  E-DEVLET VE BİLİŞİM HİZMETLERİ GENEL MÜDÜR YARDIMCISI  |  BİLİŞİM  İŞ GELİŞTİRME VE PROJE YÖNETİMİ DİREKTÖRLÜĞÜ  |  BEAM BİRİM  |  TEST DEPARTMENT'])[1]")
     public WebElement bilgiTestDepartment_loc;
     @FindBy(xpath = "(//span[@class='ui-button-icon-left ui-icon ui-c tree-icon'])[4]")
     public WebElement geregiSec_loc;
     @FindBy(xpath = "//li[@id='yeniGidenEvrakForm:evrakBilgileriList:18:geregiLov:lovTree:0']//span[@class='ui-tree-toggler ui-icon ui-icon-triangle-1-e']")
     public WebElement geregiBirim_loc;
-    @FindBy(xpath = "(//span[text()='GENEL MÜDÜRLÜK MAKAMI  |  E-DEVLET VE BİLİŞİM HİZMETLERİ GENEL MÜDÜR YARDIMCISI  |  BİLİŞİM  İŞ GELİŞTİRME VE PROJE YÖNETİMİ DİREKTÖRLÜĞÜ  |  BEAM BİRİM  |  TEST DEPARTMENT  |  Alt Test Birimi'])[2]")
-    public WebElement geregiAltTestBirim_loc;
+    @FindBy(xpath = "(//span[text()='GENEL MÜDÜRLÜK MAKAMI'])[4]")
+    public WebElement geregiGenelMudurluk_loc;
     @FindBy(xpath = "(//span[text()='[Seri] '])[2]")
     public WebElement turksatAs_loc;
     @FindBy(xpath = "//select[@name='yeniGidenEvrakForm:evrakBilgileriList:5:evrakTuruCombo']")
@@ -79,31 +77,31 @@ public class EvrakIslemleri extends BasePage {
     public WebElement editInput_loc;
     @FindBy(xpath = "//span[text()='Ekleri']")
     public WebElement ekleriTabi_loc;
-    @FindBy(xpath = "//span[text()='Dosya Ekle']")
+    @FindBy(xpath = "//input[@id='yeniGidenEvrakForm:evrakEkTabView:fileUploadButtonA_input']")
     public WebElement dosyaEkle_loc;
     @FindBy(xpath = "(//span[text()='Ekle'])[1]")
     public WebElement ekleBttn_loc;
     @FindBy(id = "yeniGidenEvrakForm:evrakEkTabView:dosyaAciklama")
     public WebElement ekMetni_loc;
- @FindBy(xpath = "//span[@class='ui-button-icon-left ui-icon ui-c kaydet']")
+    @FindBy(xpath = "//span[@class='ui-button-icon-left ui-icon ui-c kaydet']")
     public WebElement kaydetButton_loc;
- @FindBy(xpath = "//span[@class='ui-button-icon-left ui-icon ui-c imzala']")
+    @FindBy(xpath = "//span[@class='ui-button-icon-left ui-icon ui-c imzala']")
     public WebElement imzalaButton_loc;
- @FindBy(xpath = "(//span[@class='ui-radiobutton-icon ui-icon ui-icon-blank ui-c'])[2]")
+    @FindBy(xpath = "(//span[@class='ui-radiobutton-icon ui-icon ui-icon-blank ui-c'])[2]")
     public WebElement sImza_loc;
- @FindBy(xpath = "(//span[text()='İmzala'])[2]")
+    @FindBy(xpath = "(//span[text()='İmzala'])[2]")
     public WebElement imzala_loc;
-@FindBy(xpath = "(//span[text()='Evet'])[5]")
+    @FindBy(xpath = "(//span[text()='Evet'])[5]")
     public WebElement evet_loc;
-@FindBy(xpath = "//h3[text()='İşlem Yaptıklarım']")
-    public WebElement işlemYaptiklarim_loc;
-@FindBy(xpath = "//h3[text()='İşlem Yaptıklarım']")
+    @FindBy(xpath = "//h3[contains(text(),'İşlem Yaptıklarım')]")
+    public WebElement islemYaptiklarim_loc;
+    @FindBy(xpath = "//span[text()='İmzaladıklarım'][1]")
     public WebElement imzaladiklarim_loc;
-@FindBy(xpath = "(//h3[@class='ui-inbox-satir1'])[1]")
+    @FindBy(xpath = "(//h3[@class='ui-inbox-satir1'])[1]")
     public WebElement konuAdiImza_loc;
-@FindBy(xpath = "//h3[text()='Birim Evrakları (69/122)']")
+    @FindBy(xpath = "//h3[contains(text(),'Birim Evrakları')]")
     public WebElement birimEvraklari_loc;
-@FindBy(xpath = "//span[text()='Teslim Alınmayı Bekleyenler (14/23)']")
+    @FindBy(xpath = "//span[contains(text(),'Teslim Alınmayı')]")
     public WebElement teslimAlinmayiBekleyenler_loc;
     @FindBy(xpath = "(//h3[@class='ui-inbox-satir1'])[1]")
     public WebElement konuAdiTeslim_loc;
@@ -115,14 +113,18 @@ public class EvrakIslemleri extends BasePage {
 
     public void bilgileriDoldur_Mtd() {
         Actions actions = new Actions(Driver.get());
-        clickWithJS(konuKodu_loc);
-        /*clickWithJS(konuKoduCarpi_loc);
-        actions.sendKeys(konuKodu_loc,"fatura")
-                        .perform();
-                waitFor(3);
-        actions.doubleClick(faturaSikayetleri_loc).perform();*/
+        clickWithJS(konuKoduCarpi_loc);
+        clickWithJS(konuKoduSec_loc);
+        clickWithJS(konuKabloHizmetleri_loc);
+        clickWithJS(konuKabloMusteriHizmetleri_loc);
+        clickWithJS(konuAboneIslemleri_loc);
+        clickWithJS(konuSikayetler_loc);
+        actions.doubleClick(konuFaturaSikayetler_loc).perform();
+        waitFor(2);
+        konu_loc.click();
         konu_loc.clear();
-        konu_loc.sendKeys("Fatura Hakkında Yapılan Şikayetler");
+        konu_loc.sendKeys("Fatura Hakkında Şikayetler");
+        waitFor(2);
         clickWithJS(kaldirilacakKlasorlerSec_loc);
         waitFor(3);
         actions.doubleClick(turksatAs_loc).perform();
@@ -135,16 +137,23 @@ public class EvrakIslemleri extends BasePage {
         clickWithJS(kanunKapsamTipi_loc);
         Select ivedilik = new Select(ivedilik_loc);
         ivedilik.selectByVisibleText("Normal");
-       /* scrolldownWithJS(bilgi_loc);
-        actions.sendKeys(bilgi_loc, "TEST DEPARTMENT")
-                .perform();
-        actions.doubleClick(bilgiTestDepartment_loc).perform();*/
+
         clickWithJS(bilgiSec_loc);
         clickWithJS(bilgiBirim_loc);
-        actions.doubleClick(bilgiGenelMudurluk_loc).perform();
+        waitFor(2);
+        clickWithJS(bilgiGenelMudurluk_loc);
+        waitFor(2);
+        clickWithJS(bilgiEdevlet_loc);
+        waitFor(2);
+        clickWithJS(bilgiBilisim2_loc);
+        waitFor(2);
+        clickWithJS(bilgiBean_loc);
+        waitFor(2);
+        scrolldownWithJS(bilgiTestDepartment_loc);
+        actions.doubleClick(bilgiTestDepartment_loc).perform();
         clickWithJS(geregiSec_loc);
         clickWithJS(geregiBirim_loc);
-        actions.doubleClick(geregiAltTestBirim_loc).perform();
+        actions.doubleClick(geregiGenelMudurluk_loc).perform();
         scrolldownWithJS(onayAkisi_loc);
         clickWithJS(onayAkisi_loc);
         waitFor(2);
@@ -153,7 +162,8 @@ public class EvrakIslemleri extends BasePage {
         imzacı.selectByVisibleText("İmzalama");
         kullanButton_loc.click();
     }
-    public void editTabi_Mtd(){
+
+    public void editTabi_Mtd() {
         clickWithJS(editor_loc);
         waitFor(3);
         new Actions(Driver.get())
@@ -162,50 +172,62 @@ public class EvrakIslemleri extends BasePage {
 
 
     }
-    public void dosyaEkle_Mtd (){
-        Actions actions =new Actions(Driver.get());
+
+    public void dosyaEkle_Mtd() {
+        Actions actions = new Actions(Driver.get());
         clickWithJS(ekleriTabi_loc);
-        actions.sendKeys(ekMetni_loc,"Ek-1(Fatura Şikayeti)")
+        actions.sendKeys(ekMetni_loc, "Ek-1(Fatura Şikayeti)")
                 .perform();
 
-        /*String projectPath=System.getProperty("user.dir");
-        String filePath="src/test/resources/Fatura Şikayet.docx";
-        String fullPath=projectPath+"/"+filePath;
-                actions.sendKeys(dosyaEkle_loc, fullPath)
-                .perform();
-
-
-        clickWithJS(ekleBttn_loc);*/
-       clickWithJS(kaydetButton_loc);
-
+        String projectPath = System.getProperty("user.dir");
+        String filePath = "src/test/resources/Fatura Şikayet.docx";
+        String fullPath = projectPath + "/" + filePath;
+        dosyaEkle_loc.sendKeys(fullPath);
+        waitFor(3);
+        clickWithJS(ekleBttn_loc);
+        clickWithJS(kaydetButton_loc);
 
 
     }
-    public void imzala_Mtd(){
+
+    public void imzala_Mtd() {
         waitFor(3);
         clickWithJS(imzalaButton_loc);
         clickWithJS(sImza_loc);
-        waitFor(5);
+        String windowHandle = Driver.get().getWindowHandle();
+        Set<String> windowHandles = Driver.get().getWindowHandles();
+        for (String handle : windowHandles) {
+            if (!handle.equals(windowHandle)) {
+                Driver.get().switchTo().window(handle);
+                Driver.get().close();
+            }
+        }
+
+        Driver.get().switchTo().window(windowHandle);
+
+        waitFor(3);
         clickWithJS(imzala_loc);
+        waitFor(2);
         clickWithJS(evet_loc);
 
 
     }
-    public void verifyImzaladiklarim(){
-        clickWithJS(işlemYaptiklarim_loc);
+
+    public void verifyImzaladiklarim(String expectedText) {
+        clickWithJS(islemYaptiklarim_loc);
+        scrolldownWithJS(imzaladiklarim_loc);
         clickWithJS(imzaladiklarim_loc);
-        String actualText =  konuAdiImza_loc.getText();
-        String expectedText="Fatura Şikayetleri";
-        Assert.assertEquals(expectedText,actualText);
+        String actualText = konuAdiImza_loc.getText();
+        Assert.assertEquals(expectedText, actualText);
     }
-    public void verifyTeslimAlinmayiBekleyenler(){
-        scrolldownWithJS(birimEvraklari_loc);
+
+    public void verifyTeslimAlinmayiBekleyenler(String expectedText) {
+
         clickWithJS(birimEvraklari_loc);
         scrolldownWithJS(teslimAlinmayiBekleyenler_loc);
         clickWithJS(teslimAlinmayiBekleyenler_loc);
-        String actualText =  konuAdiTeslim_loc.getText();
-        String expectedText="Resmi Yazışma Kuralları ve Standart Dosya Planı";
-        Assert.assertEquals(expectedText,actualText);
+        String actualText = konuAdiTeslim_loc.getText();
+        Assert.assertEquals(expectedText, actualText);
     }
 
-    }
+}

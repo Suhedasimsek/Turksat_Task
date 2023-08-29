@@ -38,15 +38,13 @@ public class Evrakİslemleri_Stepdefs {
         
     }
 
-    @Then("İmzaladıklarım listesinde evrakın düştüğünü görür.")
-    public void i̇mzaladıklarımListesindeEvrakınDüştüğünüGörür() {
-        evrakIslemleri.verifyImzaladiklarim();
-
-
+    @Then("İmzaladıklarım listesinde {string} konulu evragın düştüğünü görür.")
+    public void i̇mzaladıklarımListesindeKonuluEvragınDüştüğünüGörür(String evrakKonu) {
+        evrakIslemleri.verifyImzaladiklarim(evrakKonu);
     }
 
-    @And("Teslim alınmayı bekleyenler listesine evrakın düştüğünü görür.")
-    public void teslimAlınmayıBekleyenlerListesineEvrakınDüştüğünüGörür() {
-        evrakIslemleri.verifyTeslimAlinmayiBekleyenler();
+    @And("Teslim alınmayı bekleyenler listesine {string} konulu evragın düştüğünü görür.")
+    public void teslimAlınmayıBekleyenlerListesineKonuluEvragınDüştüğünüGörür(String evrakKonu) {
+        evrakIslemleri.verifyTeslimAlinmayiBekleyenler(evrakKonu);
     }
 }

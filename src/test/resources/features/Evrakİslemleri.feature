@@ -1,5 +1,5 @@
 
-Feature: Belgenet Log in Test
+Feature: Belgenet Evrak Oluşturma Testi
   # Agile story : Kullanıcı tek imzacılı resmi yazı oluşturabilmelidir.
 
   Background:
@@ -13,6 +13,6 @@ Feature: Belgenet Log in Test
     And  Edit tabındaki gerekli alanları doldurur.
     And  Ekleri tabından dosya ekler.
     And  Hazırladığı evrakı imzalar.
-    Then İmzaladıklarım listesinde evrakın düştüğünü görür.
-    And  Teslim alınmayı bekleyenler listesine evrakın düştüğünü görür.
+    Then İmzaladıklarım listesinde "Konu: Fatura Hakkında Şikayetler" konulu evragın düştüğünü görür.
+    And  Teslim alınmayı bekleyenler listesine "Konu: Fatura Hakkında Şikayetler" konulu evragın düştüğünü görür.
 

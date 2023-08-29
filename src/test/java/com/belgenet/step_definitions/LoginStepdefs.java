@@ -22,9 +22,10 @@ public class LoginStepdefs {
 
     }
 
-    @Then("Kullanıcı login olduğunu verify eder.")
-    public void kullanıcıLoginOlduğunuVerifyEder() throws InterruptedException {
-        loginPage.verifyLogin_Mtd();
 
+    @Then("Kullanıcı login olduğunda {string} tabini gördüğünü verify eder.")
+    public void kullanıcıLoginOlduğundaTabiniGördüğünüVerifyEder(String tabName) {
+        loginPage.verifyLogin_Mtd(tabName);
     }
 }
+

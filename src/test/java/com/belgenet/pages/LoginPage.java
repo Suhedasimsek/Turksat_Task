@@ -35,10 +35,9 @@ public class LoginPage extends BasePage {
         submitButton_loc.click();
 
     }
-    public void verifyLogin_Mtd() throws InterruptedException {
-  //  waitFor(2);
+    public void verifyLogin_Mtd(String expected) {
+
     String actual = menu_loc.getText();
-    String expected = "Menü";
         Assert.assertEquals(expected,actual);
     }
 
